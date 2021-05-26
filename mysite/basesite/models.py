@@ -17,7 +17,6 @@ class User(models.Model):
 
     def lenght_of_using_the_platform(self):
         loutp = date.today() - self.sign_in_date
-        print(loutp)
 
     def __str__(self):
         return self.User_text
