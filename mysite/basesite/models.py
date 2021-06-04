@@ -21,12 +21,14 @@ class Profile(models.Model):
     education_level = models.ForeignKey(Education_level, on_delete=models.CASCADE)
     sign_in_date = models.DateField(auto_now_add=True)
     level = models.ForeignKey(level, on_delete=models.CASCADE, blank=True, null=True)
+   # fullname = str(name) + str(surname)
 
     def lenght_of_using_the_platform(self):
         loutp = date.today() - self.sign_in_date
 
     def __str__(self):
-        return self.name
+        return self.fullname
+        #return render(response, "basesite/home.html", {"fullname": fullname})
 
 
 
