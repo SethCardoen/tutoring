@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Seth's Website</title>
+    <title>
+        {% block titel %}
+        Tutor website
+        {% endblock %}
+    </title>
 </head>
 <body>
-<p> Base Template </p>
+    <div id="content" , name="content">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>
