@@ -27,7 +27,7 @@ class Profile(models.Model):
         loutp = date.today() - self.sign_in_date
 
     def __str__(self):
-        return self.name + self.id
+        return self.name
         #return render(response, "main/base.html", {"fullname": fullname})
 
 
