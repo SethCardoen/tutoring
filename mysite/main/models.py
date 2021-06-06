@@ -8,7 +8,7 @@ class Education_level(models.Model):
     def __str__(self):
         return self.diploma
 
-class level(models.Model):
+class Level(models.Model):
     rank = models.CharField('Priviliges', max_length=200, blank=True, null=True)
 
     def __str__(self):
@@ -20,15 +20,15 @@ class Profile(models.Model):
     birthdate = models.DateField('enter your birthdate')
     education_level = models.ForeignKey(Education_level, on_delete=models.CASCADE)
     sign_in_date = models.DateField(auto_now_add=True)
-    level = models.ForeignKey(level, on_delete=models.CASCADE, blank=True, null=True)
+    level = models.ForeignKey(Level, on_delete=models.CASCADE, blank=True, null=True)
    # fullname = str(name) + str(surname)
 
     def lenght_of_using_the_platform(self):
         loutp = date.today() - self.sign_in_date
 
     def __str__(self):
-        return self.fullname
-        #return render(response, "basesite/home.html", {"fullname": fullname})
+        return self.name + self.id
+        #return render(response, "main/base.html", {"fullname": fullname})
 
 
 
