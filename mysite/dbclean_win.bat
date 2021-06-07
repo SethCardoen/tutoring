@@ -9,6 +9,8 @@ del /f /q db.sqlite3
 del /f /q main\migrations\*
 echo "step 3: generate migrations"
 python manage.py makemigrations main
+python manage.py makemigrations register
+
 echo "step 4: run migrations"
 python manage.py migrate
 echo "step 5: reload previous data"
