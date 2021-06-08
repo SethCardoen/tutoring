@@ -128,3 +128,5 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
+#added to fix issue Not Found: /accounts/profile/
+LOGIN_REDIRECT_URL = '/'
