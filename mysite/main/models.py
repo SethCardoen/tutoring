@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import date
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 class Education_level(models.Model):
     diploma = models.CharField(max_length=200)
@@ -42,6 +43,7 @@ class Appointment(models.Model):
 
 # Create your models here.
 class ToDoList(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="todolist",null=True)
     date = models.DateTimeField("date published", auto_now_add=True)
     name = models.CharField(max_length=200)
 
