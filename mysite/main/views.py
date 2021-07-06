@@ -35,6 +35,8 @@ def index(response,id):
 def home(response):
     return render(response, "main/home.html", {"name":"test"})
 
+
+
 def create(response):
     if response.method == "POST":
         form = CreateNewList(response.POST)
@@ -54,3 +56,7 @@ def create(response):
 
 def view(response):
     return render(response,"main/view.html",{})
+
+
+def test(response):
+    return render(response, "main/test.html", {})
